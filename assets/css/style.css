@@ -1,0 +1,481 @@
+/* --------------------------------------------------------
+
+Template Name:
+Version: 1.0
+
+-----------------------------------------------------------*/
+
+/*
+01. Default Style
+02. Landing Page
+03. Home Page
+04. Media Query
+ */
+
+
+/************01. Default Style***********/
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+a,button{
+    font-family: 'Poppins', sans-serif;
+}
+p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+:focus {
+    outline: 0;
+}
+a:hover{
+    text-decoration: unset;
+}
+/************02. Landing Page***********/
+.header #logoWrap {
+    transform: scale(0.5);
+}
+#logoWrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50px);
+    width: 72px;
+}
+#logo  h5{
+    padding-top: 3rem;
+}
+.h-logoWrap{
+    left: 15px !important;
+    margin-left: unset !important;
+    margin-right: unset !important;
+}
+.part {
+    width: 30px;
+    height: 30px;
+    transition: all 0.25s ease-in-out;
+    margin: 3px;
+    float: left;
+}
+.white-one {
+    border-radius: 50% 0 50% 50%;
+    background-color: #f8f9fa;
+}
+.grey-one {
+    border-radius: 50%;
+    background-color: #97999a;
+}
+.grey-two {
+    background-color: #97999a;
+}
+.white-two {
+    border-radius: 50% 50% 50% 0;
+    background-color: #f8f9fa;
+}
+#logo:hover {
+    cursor: pointer;
+}
+#logo:hover .grey-one {
+    border-radius: 50% 50% 50% 0;
+    transform: translateX(36px);
+}
+#logo:hover .white-two {
+    border-radius: 50%;
+    transform: translateY(36px);
+}
+#logo:hover .grey-two {
+    border-radius: 50% 0 50% 50%;
+    transform: translateX(-36px);
+}
+#logo:hover .white-one {
+    border-radius: 50%;
+    transform: translateY(-36px);
+}
+#logo h5{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.landing-page{
+    background: black;
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+.bg-img{
+    background: url("../images/bg-img.jpg");
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+    background-position: bottom;
+}
+.landing-page .brand-logo{
+    text-align: center;
+    padding-top: 13rem;
+}
+.landing-page .brand-logo img{
+    width: 300px;
+}
+.text-title{
+    font-family: 'Mrs Saint Delafield', cursive;
+    color: grey;
+    position: relative;
+    margin-top: 9rem;
+    text-align: center;
+    z-index: 2;
+}
+.text-title span {
+    position: relative;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 50px;
+}
+.text-title span::before {
+    right: 115%;
+}
+.text-title span::before, .text-title span::after{
+    content: "";
+    position: absolute;
+    background: grey;
+    width: 100vh;
+    height: 0.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.text-title span::after {
+    left: 115%;
+}
+.main-menu{
+    margin-top: 2rem;
+}
+.main-menu .list-group{
+    justify-content: center;
+}
+.main-menu .list-group .list-group-item{
+    background-color: transparent;
+    text-transform: uppercase;
+    border-right: 1px solid grey;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    padding: .10rem 1.25rem;
+}
+.main-menu .list-group .list-group-item:last-child{
+    border-right: unset;
+}
+.main-menu ul li a{
+    color: #adb5bd;
+}
+
+/************03. Home Page***********/
+.home-page{
+    background: black;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.home-page .container-fluid {
+    width: 94%;
+}
+.home-page .brand-logo{
+    width: 250px;
+}
+.menu{
+    justify-content: flex-end;
+}
+.border-none{
+    border-bottom: unset !important;
+}
+.menu a{
+    padding:13px;
+    font-size: 13px;
+    min-width: 100px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.menu a:last-child{
+    border-right: unset;
+}
+.main-menu{
+    margin-top: 2rem;
+}
+
+.mobile-menu i{
+    color: white;
+}
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 16;
+    text-align: center;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 10rem;
+    transition: 0.5s;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+.home-page .carousel-item img{
+    width: 85%;
+    float: right;
+    object-fit: cover;
+    height: 550px;
+}
+.carousel-caption{
+    top: 100px;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.carousel-caption h1{
+    font-size: 60px;
+    text-transform: uppercase;
+}
+.carousel-caption p{
+    padding-right: 6rem;
+}
+.carousel-indicators li{
+    height: 5px;
+    width: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.carousel-indicators{
+    margin:0 0 45px 15px;
+    justify-content: start;
+}
+.view-block{
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: 47%;
+    transform: translateY(-47%);
+    right: -120px;
+}
+.view-block h6{
+    color: white;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 9.5rem 2rem 0;
+    position: relative;
+}
+.view-block h6::before{
+    right: 90%;
+}
+.view-block h6::after{
+    left: 125%;
+}
+.view-block h6::before,.view-block h6::after {
+    content: "";
+    position: absolute;
+    background: grey;
+    width: 100vh;
+    margin: 5px;
+    height: 0.5px;
+}
+
+#demo{
+    position: relative;
+    overflow: hidden;
+
+}
+.view-text{
+    position: absolute;
+    right: 0;
+    top: 62%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+.view-title{
+    color: grey;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    right: 85px;
+}
+.view-title span {
+    position: relative;
+    display: inline-block;
+}
+.view-title span a{
+    font-weight: normal;
+    font-size: 12px;
+    color: white;
+}
+
+.view-title span::before {
+    right: 115%;
+}
+.view-title span::before, .view-title span::after{
+    content: "";
+    position: absolute;
+    background: grey;
+    width: 2500px;
+    height: 0.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.view-title span::after {
+    left: 115%;
+}
+.share-icon{
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    bottom: 55px;
+}
+.view-portfolio{
+    position: absolute;
+    z-index: 1;
+    right: -33px;
+    background: white;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.view-portfolio p {
+    font-size: 12px;
+    margin-bottom: 0;
+    padding: 15px;
+    color: black;
+}
+/************04. Media Query***********/
+@media only screen and (max-width: 1365px) {
+    /*home page*/
+    .carousel-caption h1 {
+        font-size: 40px;
+    }
+    .home-page .carousel-item img{
+        height: 470px;
+    }
+    .view-text{
+        top: 64%;
+    }
+    /*landing page*/
+    .landing-page .brand-logo {
+        padding-top: 10rem;
+    }
+    .landing-page{
+        padding-top: 6rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    /*home page*/
+    .carousel-caption{
+        width: 75% !important;
+    }
+    /*landing page*/
+}
+@media only screen and (min-width: 600px) {
+    /*home page*/
+    .view-portfolio{
+        display: none;
+    }
+    .mobile-menu{
+        display: none;
+    }
+    /*landing page*/
+    .small-sr-menu{
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    /*home page*/
+    .menu{
+        justify-content: center;
+    }
+    .home-page .brand-logo-h{
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .navigation,.view-block,.view-title{
+        display: none !important;
+    }
+    #demo{
+        overflow: visible;
+    }
+    .carousel-caption h1{
+        font-size: 26px;
+    }
+    .carousel-caption p{
+        padding-right: 0;
+    }
+    .mobile-menu{
+        float: right;
+    }
+    /*landing page*/
+    .main-menu {
+        margin-top: 1rem;
+    }
+    .text-title{
+        margin-top: 7rem;
+    }
+    .landing-page .brand-logo {
+        padding-top: 9rem;
+    }
+}
+@media screen and (max-height: 450px) {
+    /*home page*/
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    /*landing page*/
+}
+
